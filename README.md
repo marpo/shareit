@@ -23,5 +23,6 @@ Das Kernziel ist das Austauschen von lesenswerten Artikeln, Büchern oder Code-S
 Das Ziel ist es einen vergleichbaren Entwicklungsablauf zu haben wie bei den Kundenprojekten.
 Es bestehen folgende technische Richtlinien:
   - Das Projekt wird mit GIT versionisiert
+  - Als Datenbank wird PostgreSQL eingesetzt
   - Das UI wird mit Twitter Bootstrap umgesetzt (http://twitter.github.com/bootstrap/)
   - Das Projekt wird mit automatisierten Tests abgedeckt (RSpec)
