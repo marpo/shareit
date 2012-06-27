@@ -16,10 +16,11 @@
 			<%= label_tag :password, 'Passwort:' %>
 			<%= password_field_tag :password, params[:password] %>
 			</div>
-			
+
 			<div>
 			<%= submit_tag "Login" %>
 			</div>
 		</fieldset>
 	<% end %> 
+	<%= button_to 'Registrieren', users_url, method: :get, form_class: 'btn btn-primary' %>
 </div>

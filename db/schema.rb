@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20120627160324) do
     t.string   "url"
     t.string   "titel"
     t.text     "beschreibung"
+    t.string   "autor"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20120627160324) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "password_digest"
+    t.string   "email"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
