@@ -1,4 +1,6 @@
 Shareit::Application.routes.draw do
+  resources :code_snippets
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

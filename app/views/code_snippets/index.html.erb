@@ -1,0 +1,29 @@
+<h1>Listing code_snippets</h1>
+
+<table>
+  <tr>
+    <th>Titel</th>
+    <th>Sprache</th>
+    <th>Beschreibung</th>
+    <th>Code</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @code_snippets.each do |code_snippet| %>
+  <tr>
+    <td><%= code_snippet.titel %></td>
+    <td><%= code_snippet.sprache %></td>
+    <td><%= code_snippet.beschreibung %></td>
+    <td><%= code_snippet.code %></td>
+    <td><%= link_to 'Show', code_snippet %></td>
+    <td><%= link_to 'Edit', edit_code_snippet_path(code_snippet) %></td>
+    <td><%= link_to 'Destroy', code_snippet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Code snippet', new_code_snippet_path %>
