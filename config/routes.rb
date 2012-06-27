@@ -1,13 +1,15 @@
 Shareit::Application.routes.draw do
-  get "admin/index"
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+  get "anzeige/index"
 
   get 'admin' => 'admin#index'
 
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/destroy"
+  
 
   resources :users
 
@@ -62,7 +64,7 @@ Shareit::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'links#index'
+  root :to => 'anzeige#index', as: 'anzeige'
 
   # See how all your routes lay out with "rake routes"
 
