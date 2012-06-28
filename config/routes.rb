@@ -7,11 +7,7 @@ Shareit::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  get "anzeige/index"
-
   get 'admin' => 'admin#index'
-
-  
 
   resources :users
 
@@ -66,7 +62,7 @@ Shareit::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'anzeige#index', as: 'anzeige'
+  root :to => 'shareit#index'
 
   # See how all your routes lay out with "rake routes"
 

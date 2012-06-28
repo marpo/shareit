@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Titel</th>
+    <th>Beschreibung</th>
+    <th>Autor</th>
+    <th>Inhalt</th>
+  </tr>
+
+ 
+<% @eintraege.each do |eintrag|%>
+ <tr>
+<td><%= eintrag.titel %></td>
+<td><%= eintrag.beschreibung %></td>
+<td><%= eintrag.autor %></td>
+<td><%= eintrag %></td>
+  </tr>
+<% end %>
+</table>

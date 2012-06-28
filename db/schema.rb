@@ -11,25 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627210450) do
+ActiveRecord::Schema.define(:version => 20120628134855) do
 
   create_table "code_snippets", :force => true do |t|
     t.string   "titel"
     t.string   "sprache"
     t.text     "beschreibung"
     t.text     "code"
-    t.string   "autor"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
   end
 
   create_table "links", :force => true do |t|
     t.string   "url"
     t.string   "titel"
     t.text     "beschreibung"
-    t.string   "autor"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

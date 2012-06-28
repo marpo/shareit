@@ -41,7 +41,7 @@ class CodeSnippetsController < ApplicationController
   # POST /code_snippets.json
   def create
     @code_snippet = CodeSnippet.new(params[:code_snippet])
-    @code_snippet.autor = User.find_by_name(params[:name])
+    @code_snippet.user = User.find(session[:user_id])
 
     respond_to do |format|
       if @code_snippet.save

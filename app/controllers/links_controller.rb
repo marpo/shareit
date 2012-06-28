@@ -41,7 +41,7 @@ class LinksController < ApplicationController
   # POST /links.json
   def create
     @link = Link.new(params[:link])
-    @link.autor = User.find_by_id(session[:user_id]).name
+    @link.user = User.find(session[:user_id])
 
     respond_to do |format|
       if @link.save

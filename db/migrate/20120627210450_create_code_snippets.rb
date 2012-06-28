@@ -5,7 +5,7 @@ class CreateCodeSnippets < ActiveRecord::Migration
       t.string :sprache
       t.text :beschreibung
       t.text :code
-      t.string :autor
+
 
       t.timestamps
     end

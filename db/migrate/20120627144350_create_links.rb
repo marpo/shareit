@@ -4,7 +4,6 @@ class CreateLinks < ActiveRecord::Migration
       t.string :url
       t.string :titel
       t.text :beschreibung
-      t.string :autor
 
       t.timestamps
     end
