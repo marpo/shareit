@@ -1,3 +1,4 @@
+
 <table>
   <tr>
     <th>Titel</th>
@@ -7,7 +8,7 @@
   </tr>
 
  
-<% @eintraege.each do |eintrag|%>
+<% @eintraegepaginiert.each do |eintrag|%>
  <tr>
 <td><%= eintrag.titel %></td>
 <td><%= eintrag.beschreibung %></td>
@@ -16,3 +17,5 @@
   </tr>
 <% end %>
 </table>
+
+<%= will_paginate @eintraegepaginiert%>
