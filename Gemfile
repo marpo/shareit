@@ -7,6 +7,7 @@ gem 'rails', '3.2.6'
 
 gem 'sqlite3'
 gem "will_paginate", "~> 3.0.3"
+gem 'will_paginate_list_renderer', :github => 'timgaraiocom/will-paginate-list-renderer'
 
 # Gems used only for assets and not required
 # in production environments by default.

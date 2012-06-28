@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/timgaraiocom/will-paginate-list-renderer.git
+  revision: ac60cbc44f24061bfb32f9fe22a112ff1357025f
+  specs:
+    will_paginate_list_renderer (0.0.1)
+      will_paginate (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -113,3 +120,4 @@ DEPENDENCIES
   sqlite3
   uglifier (>= 1.0.3)
   will_paginate (~> 3.0.3)
+  will_paginate_list_renderer!
