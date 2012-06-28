@@ -1,5 +1,5 @@
 class CodeSnippet < ActiveRecord::Base
-  attr_accessible :beschreibung, :code, :sprache, :titel
+  attr_accessible :beschreibung, :code, :sprache, :titel, SPRACHE
   validates :sprache, inclusion: SPRACHE
-  SPRACHE = [ "Ruby", "C", "Html", "etxc" ]
+  SPRACHE = [ "Ruby", "C", "Html", "etc." ]
 end

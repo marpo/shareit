@@ -16,6 +16,9 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">Shareit!</a>
+          <div class="btn-group pull-right">
+            <%= render 'sessions/sessions' %>
+          </div>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -26,7 +29,9 @@
         </div>
       </div>
     </div>
-<%= yield %>
+    <div class="container main">
+      <%= yield %>
+    </div>
 
 </body>
 </html>

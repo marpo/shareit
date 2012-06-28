@@ -5,6 +5,7 @@
     <th>Url</th>
     <th>Titel</th>
     <th>Beschreibung</th>
+    <th>Autor</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +16,7 @@
     <td><%= link.url %></td>
     <td><%= link.titel %></td>
     <td><%= link.beschreibung %></td>
+    <td><%= link.autor %></td>
     <td><%= link_to 'Show', link %></td>
     <td><%= link_to 'Edit', edit_link_path(link) %></td>
     <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
