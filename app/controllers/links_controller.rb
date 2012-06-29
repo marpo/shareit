@@ -15,6 +15,7 @@ class LinksController < ApplicationController
   # GET /links/1.json
   def show
     @link = Link.find(params[:id])
+    @kommentare = Kommentar.all
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,4 +1,6 @@
 Shareit::Application.routes.draw do
+  resources :kommentare
+
   resources :code_snippets
 
   controller :sessions do
