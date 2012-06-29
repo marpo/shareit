@@ -14,10 +14,9 @@
   <b>Beschreibung:</b>
   <%= @code_snippet.beschreibung %>
 </p>
-
 <p>
   <b>Code:</b>
-  <%=  @highlighted_code_snippet %>
+  <%= codeAnfaerben(@code_snippet.code) %>
 </p>
 
 
