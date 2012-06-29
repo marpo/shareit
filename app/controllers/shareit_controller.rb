@@ -26,4 +26,13 @@ class ShareitController < ApplicationController
       format.json { render json: @code_snippet }
     end
   end
+
+  def rss
+ 
+  @eintraege = snippetsUndLinksKombinieren
+  respond_to do |format|
+  	format.atom
+  end
+  end
+
 end

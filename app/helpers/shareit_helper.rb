@@ -7,4 +7,10 @@ module ShareitHelper
 			link_to "Anzeigen", link_path(obj), :class => 'btn btn-mini btn-primary'
 		end
 	end
+
+	def snippetsUndLinksKombinieren
+		 @links = Link.all
+ 		 @code_snippets = CodeSnippet.all
+ 		 [@links, @code_snippets].flatten
+	end
 end

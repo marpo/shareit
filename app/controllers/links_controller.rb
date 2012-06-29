@@ -2,7 +2,8 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+  #  @links = Link.all
+    @links = Link.where("user_id == #{session[:user_id]}")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,7 +2,7 @@ class CodeSnippetsController < ApplicationController
   # GET /code_snippets
   # GET /code_snippets.json
   def index
-    @code_snippets = CodeSnippet.all
+    @code_snippets = CodeSnippet.where("user_id == #{session[:user_id]}")
 
     respond_to do |format|
       format.html # index.html.erb
