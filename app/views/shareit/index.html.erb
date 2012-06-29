@@ -1,21 +1,31 @@
 
-<table>
-  <tr>
-    <th>Titel</th>
-    <th>Beschreibung</th>
-    <th>Autor</th>
-    <th>Inhalt</th>
-  </tr>
 
- 
 <% @eintraegepaginiert.each do |eintrag|%>
- <tr>
-<td><%= eintrag.titel %></td>
-<td><%= eintrag.beschreibung %></td>
-<td><%= eintrag.autor %></td>
-<td><%= eintrag %></td>
-  </tr>
+	<table>
+		<tr>
+			<th></th>
+		</tr>
+		<tr>
+			<td>
+			<div style='width:500;'>
+				<div style="float: left; width: 100px; margin: 0; margin-top:10px; padding: 0;">
+					<%= anzeigeButton(eintrag) %>
+				</div>
+				<div style=' margin-left:100px;'>
+
+					<h2><%= eintrag.titel %></h2>
+					<blockquote>	
+  					<p><%= eintrag.beschreibung %></p>
+  					<small><%= eintrag.autor %></small>
+					</blockquote>
+				
+				</div>
+				
+			</div>
+		</td>
+		</tr>
+	</table>
+	
 <% end %>
-</table>
 
 <p><%= will_paginate @eintraegepaginiert %></p>
