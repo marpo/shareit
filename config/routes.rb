@@ -1,4 +1,6 @@
 Shareit::Application.routes.draw do
+  get "suchen/index"
+
   resources :kommentare
 
   resources :code_snippets
@@ -8,7 +10,7 @@ Shareit::Application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
-
+  post 'suchen' => 'suchen#create'
   get 'admin' => 'admin#index'
 
   resources :users

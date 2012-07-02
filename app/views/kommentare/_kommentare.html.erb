@@ -1,8 +1,9 @@
 
 <div class="well" style="min-height:300px;">
-	<% @eintrag.kommentare.each do |kommentar| %>
+	<% @kommentare.each do |kommentar| %>
 	  	<p><%= kommentar.autor %>:  <%= kommentar.derkommentar %></p>
 	<% end %>
+	<p><%= will_paginate @kommentare %></p>
 	<%= render 'kommentare/form' %>	
 </div>
  

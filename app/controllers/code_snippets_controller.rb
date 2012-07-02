@@ -15,7 +15,7 @@ class CodeSnippetsController < ApplicationController
   def show
     @code_snippet = CodeSnippet.find(params[:id])
     @kommentar = @code_snippet.kommentare.build
-    @eintrag = @code_snippet
+    @kommentare = @code_snippet.kommentare.paginate :page=>params[:page], :order=>'created_at desc', :per_page => 5
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @code_snippet }

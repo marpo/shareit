@@ -16,7 +16,7 @@ class LinksController < ApplicationController
   def show
     @link = Link.find(params[:id])
     @kommentar = @link.kommentare.build
-    @eintrag = @link
+    @kommentare = @link.kommentare.paginate :page=>params[:page], :order=>'created_at desc', :per_page => 5
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @link }

@@ -22,3 +22,14 @@
   .containermain {
   	margin-right: 500px;
   }
+
+  .suchenfeld {
+    
+    float: left; width: 450px;
+    margin: 0; padding: 0;
+  
+  }
+
+  .loginfeld {
+  	margin-left: 500px;
+  }

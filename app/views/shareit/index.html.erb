@@ -10,7 +10,10 @@
 				<div style="float: left; width: 100px; margin: 0; margin-top:10px; padding: 0;">
 					<%= anzeigeButton(eintrag) %>
 				</div>
-				<div style=' margin-left:100px;'>
+				<div style="float: right; width: auto; margin: 0; margin-top:10px; padding: 0;">
+					<%= label_tag eintrag.tags, nil, :class => 'btn-primary' %>
+				</div>
+				<div style=' margin-left:100px; margin-right: 100px;'>
 
 					<h2><%= eintrag.titel %></h2>
 					<blockquote>	

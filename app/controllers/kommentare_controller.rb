@@ -43,7 +43,7 @@ class KommentareController < ApplicationController
     @kommentar.autor = User.find(session[:user_id]).name
     respond_to do |format|
       if @kommentar.save
-        format.html { redirect_to @kommentar, notice: 'Kommentar was successfully created.' }
+        format.html { redirect_to :back, notice: 'Kommentar was successfully created.' }
         format.json { render json: @kommentar, status: :created, location: @kommentar }
       else
         format.html { render action: "new" }

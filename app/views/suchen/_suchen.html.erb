@@ -1,0 +1,9 @@
+<%= form_tag('/suchen') do %> 
+	<div>
+	<%= text_field_tag :sucheeingabe, params[:sucheingabe] %>
+	</div>
+
+	<div>
+	<%= submit_tag "Suchen" %>
+	</div>
+<% end %>

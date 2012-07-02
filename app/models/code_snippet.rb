@@ -4,7 +4,7 @@ class CodeSnippet < ActiveRecord::Base
   belongs_to :user
   has_many :kommentare, dependent: :destroy, :foreign_key => "link_id"
 
-  attr_accessible :beschreibung, :code, :sprache, :titel
+  attr_accessible :beschreibung, :code, :sprache, :titel, :tags
   
   validates :sprache, inclusion: SPRACHE
   validates :titel, :code, :autor, :presence => true
@@ -12,9 +12,7 @@ class CodeSnippet < ActiveRecord::Base
   def autor
   	user.name
   end
-  def komentareanzeigen
-    kommentare.derkommentar
-  end
+  
   def to_s
   	code
   end
