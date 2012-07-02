@@ -17,10 +17,21 @@ class SuchenController < ApplicationController
   def suchebearbeitung(eingabe)
     eingabe.strip!
     eingabe.downcase!
-  	if eingabe.start_with?("TAGS:")
-    		@links = Link.where(:tags => eingabe.sub(/[TAGS:]/, ''))
-    		@code_snippets = CodeSnippet.where(:tags => eingabe.sub(/[TAGS:]/, ''))
+  	if eingabe.start_with?("tags:")
+        eingabe.gsub!('tags:', '')
+    		@links = Link.find_by_sql("SELECT * FROM links WHERE tags LIKE '%#{eingabe.strip}%'")
+    		@code_snippets = CodeSnippet.find_by_sql("SELECT * FROM code_snippets WHERE tags LIKE '%#{eingabe.strip}%'")
     		rueckgabe = [@links, @code_snippets].flatten
+    elsif eingabe.start_with?("beschreibung:")
+        eingabe.gsub!('beschreibung:', '')
+        @links = Link.find_by_sql("SELECT * FROM links WHERE beschreibung LIKE '%#{eingabe.strip}%'")
+        @code_snippets = CodeSnippet.find_by_sql("SELECT * FROM code_snippets WHERE beschreibung LIKE '%#{eingabe.strip}%'")
+        rueckgabe = [@links, @code_snippets].flatten
+      elsif eingabe.start_with?("titel:")
+        eingabe.gsub!('titel:', '')
+        @links = Link.find_by_sql("SELECT * FROM links WHERE titel LIKE '%#{eingabe.strip}%'")
+        @code_snippets = CodeSnippet.find_by_sql("SELECT * FROM code_snippets WHERE titel LIKE '%#{eingabe.strip}%'")
+        rueckgabe = [@links, @code_snippets].flatten
   	else
   		@links = Link.find_by_sql("SELECT * FROM links WHERE titel LIKE '%#{eingabe}%' OR tags LIKE '%#{eingabe}%' OR beschreibung LIKE '%#{eingabe}%'")
     		@code_snippets = CodeSnippet.find_by_sql("SELECT * FROM code_snippets WHERE titel LIKE '%#{eingabe}%' OR tags LIKE '%#{eingabe}%' OR beschreibung LIKE '%#{eingabe}%'")

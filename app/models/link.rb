@@ -2,7 +2,7 @@ class Link < ActiveRecord::Base
   belongs_to :user
   has_many :kommentare, dependent: :destroy
  
-  attr_accessible :beschreibung, :titel, :url
+  attr_accessible :beschreibung, :titel, :url, :tags
  
   validates :url, :titel, :user, :presence => true
  
