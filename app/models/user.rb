@@ -4,5 +4,6 @@ class User < ActiveRecord::Base
   #validates :user, presence: true
   has_many :code_snippets
   has_many :links
+  has_many :kommentare
   has_secure_password
 end

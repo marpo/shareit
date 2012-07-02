@@ -46,16 +46,17 @@
               <li class="nav-header"><%= wer %></li>
               <li><%= link_to 'Meine Links', links_path %></li>
               <li><%= link_to 'Meine CodeSnippets', code_snippets_path %></li>
+              <li><%= link_to 'Meine Kommentare', kommentare_path %></li>
               <li><a href="#">Link</a></li>
               <% end %>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
       <div class="dieBox">
-        <div class="well" style="min-height:300px;">
+        <!--<div class="well" style="min-height:300px;"> -->
           <%= yield :die_box %>
           <link rel="alternate" type="application/rss+xml" title="RSS" href="url/to/rss/file" />
-        </div>
+        <!--</div> -->
       </div>
     <div class="container main">
       <%= yield %>

@@ -1,0 +1,8 @@
+
+<div class="well" style="min-height:300px;">
+	<% @eintrag.kommentare.each do |kommentar| %>
+	  	<p><%= kommentar.autor %>:  <%= kommentar.derkommentar %></p>
+	<% end %>
+	<%= render 'kommentare/form' %>	
+</div>
+ 

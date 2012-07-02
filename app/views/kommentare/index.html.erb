@@ -1,24 +1,9 @@
-<h1>Listing kommentare</h1>
-
-<table>
-  <tr>
-    <th>Autor</th>
-    <th>Derkommentar</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Kommentare</h1>
 
 <% @kommentare.each do |kommentar| %>
-  <tr>
-    <td><%= kommentar.autor %></td>
-    <td><%= kommentar.derkommentar %></td>
-    <td><%= link_to 'Show', kommentar %></td>
-    <td><%= link_to 'Edit', edit_kommentar_path(kommentar) %></td>
-    <td><%= link_to 'Destroy', kommentar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <p><%= kommentar.autor %>:  <%= kommentar.derkommentar %></p>
+    
 <% end %>
-</table>
 
 <br />
 

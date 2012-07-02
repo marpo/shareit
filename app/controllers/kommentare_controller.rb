@@ -2,8 +2,7 @@ class KommentareController < ApplicationController
   # GET /kommentare
   # GET /kommentare.json
   def index
-    @kommentare = Kommentar.all
-
+    @kommentare = Komentar.where("user_id == #{session[:user_id]}")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @kommentare }
@@ -41,7 +40,7 @@ class KommentareController < ApplicationController
   # POST /kommentare.json
   def create
     @kommentar = Kommentar.new(params[:kommentar])
-
+    @kommentar.autor = User.find(session[:user_id]).name
     respond_to do |format|
       if @kommentar.save
         format.html { redirect_to @kommentar, notice: 'Kommentar was successfully created.' }

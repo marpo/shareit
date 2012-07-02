@@ -2,6 +2,7 @@ class CodeSnippet < ActiveRecord::Base
   SPRACHE = [ "Ruby", "C", "Html", "etc." ]
 
   belongs_to :user
+  has_many :kommentare, dependent: :destroy, :foreign_key => "link_id"
 
   attr_accessible :beschreibung, :code, :sprache, :titel
   
@@ -11,7 +12,9 @@ class CodeSnippet < ActiveRecord::Base
   def autor
   	user.name
   end
-  
+  def komentareanzeigen
+    kommentare.derkommentar
+  end
   def to_s
   	code
   end
