@@ -1,41 +1,29 @@
+<table class="table table-condensed table-striped">
 
-<% @eintraegepaginiert.each do |eintrag|%>
-	<table>
-		<tr>
-			<th></th>
-		</tr>
-		<tr>
-			<td>
-			<div style='width:500;'>
-				<div style="float: left; width: 100px; margin: 0; margin-top:10px; padding: 0;">
-					<%= anzeigeButton(eintrag) %>
-				</div>
-				<div style="float: right; width: auto; margin: 0; margin-top:10px; padding: 0;">
-					<% eintrag.tag_array.each do |tag| %>
-					<%= label_tag tag, nil, :class => 'btn-primary' %>
-					<% end %>
-				</div>
-				<div style=' margin-left:100px; margin-right: 100px;'>
-					<!--<% if eintrag.kind_of? CodeSnippet %>
-						<h2 class='anzeige' rel='popover' data-content='<%= html_escape(codeAnfaerben(eintrag.code)) %>' data-original-title='A Title'>
-							<%= eintrag.titel %>
-						</h2>
-					<% else %>
-					 	<h2></h2>
-					<% end %>			-->			
-					<%= code_snippet_hover(eintrag) %>
-					<blockquote>	
-					<p><%= beschreibung(eintrag) %></p>
-  					<small><%= eintrag.autor %></small>
-					</blockquote>
+	<% @eintraegepaginiert.each do |eintrag|%>
+			<tr>
+					<td>
+						<%= anzeigeButton(eintrag) %>
+					</td>
 					
-				</div>
-			</div>
-		</td>
-		</tr>
-	</table>
-	
-<% end %>
+					<td>
+						<%= code_snippet_hover(eintrag) %>
+						<blockquote>	
+						<p><%= beschreibung(eintrag) %></p>
+	  					<small><%= eintrag.autor %></small>
+						</blockquote>
+				
+					</td>
+					<td>
+						<% eintrag.tag_array.each do |tag| %>
+						<%= label_tag tag, nil, :class => 'btn' %>
+						<% end %>
+					</td>
+			</tr>
+		
+	<% end %>
+
+</table>
 
 <p><%= will_paginate @eintraegepaginiert %></p>
 

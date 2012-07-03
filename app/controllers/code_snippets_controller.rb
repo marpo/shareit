@@ -43,7 +43,6 @@ class CodeSnippetsController < ApplicationController
   def create
     @code_snippet = CodeSnippet.new(params[:code_snippet])
     @code_snippet.user = User.find(session[:user_id])
-
     respond_to do |format|
       if @code_snippet.save
         format.html { redirect_to @code_snippet, notice: 'Code snippet was successfully created.' }

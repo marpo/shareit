@@ -1,4 +1,4 @@
-<%= form_tag('/suchen', :class => 'form-search') do %> 
-	<%= text_field_tag :sucheeingabe, params[:sucheingabe] , :class => 'input-medium search-query', :size => "5x10" %>
-	<%= submit_tag "Suchen", :class => 'btn-small' %>
+<%= form_tag('/suchen', :class => 'form-search form-compact') do %> 
+	<%= text_field_tag :sucheeingabe, params[:sucheingabe] , :class => 'input-medium search-query' %>
+	<%= submit_tag "Suchen", :class => 'btn btn-small' %>
 <% end %>

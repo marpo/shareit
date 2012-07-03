@@ -1,3 +1,9 @@
 // Place all the styles related to the Anzeige controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.beschreibung {
+	width: 240px; 
+	font-size: 12px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}

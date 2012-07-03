@@ -10,18 +10,15 @@ module ShareitHelper
 
 	def code_snippet_hover obj
 		if obj.kind_of? CodeSnippet
-			content_tag(:h2, obj.titel, :class => "anzeige", :'data-content' => codeAnfaerben(obj.code))
-			#rueckgabe = "<h2 class='anzeige' rel='popover' data-content='#{html_escape(codeAnfaerben(obj.code))}' data-original-title='A Title'>#{obj.titel}</h2>"
+			content_tag(:h2, obj.titel, :class => "anzeige", :'data-content' => codeAnfaerben(obj.code, obj.sprache))
 		else
-		#	rueckgabe = "<h2>#{obj.titel}</h2>"
 			content_tag(:h2, obj.titel)
 		end
-		#rueckgabe
 	end
 
 	def beschreibung obj
 		if obj.kind_of? CodeSnippet
-			content_tag(:h2, truncate(obj.beschreibung, 40, "..."))
+			content_tag(:p, obj.beschreibung.truncate(80), :class => "beschreibung")
 		else
 			link_to obj.url, obj.url, :target => :_blank
 		end

@@ -1,5 +1,5 @@
 class CodeSnippet < ActiveRecord::Base
-  SPRACHE = [ "Ruby", "C", "Html", "etc." ]
+  SPRACHE = [ "ruby", "html", "css", "erb", "java", "javascript", "json", "php", "c++", "xml", "sql", "yaml", "python", "diff", "c", "clojure", "delphi" ]
 
   include ::Tags
 
