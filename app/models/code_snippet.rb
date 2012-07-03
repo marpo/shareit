@@ -1,6 +1,8 @@
 class CodeSnippet < ActiveRecord::Base
   SPRACHE = [ "Ruby", "C", "Html", "etc." ]
 
+  include ::Tags
+
   belongs_to :user
   has_many :kommentare, dependent: :destroy, :foreign_key => "link_id"
 
@@ -16,4 +18,5 @@ class CodeSnippet < ActiveRecord::Base
   def to_s
   	code
   end
+  
 end

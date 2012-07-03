@@ -1,4 +1,6 @@
 class Link < ActiveRecord::Base
+  include ::Tags
+
   belongs_to :user
   has_many :kommentare, dependent: :destroy
  
@@ -13,4 +15,5 @@ class Link < ActiveRecord::Base
   def to_s
   	url
   end
+
 end
