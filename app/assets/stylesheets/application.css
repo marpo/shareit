@@ -16,9 +16,8 @@
     
    float: left; 
    clear:both;
-   width: 220px;
+   width: 100%;
    margin: 0; padding: 0;
-   margin-left: 20px; 
   
   }
 
@@ -28,15 +27,16 @@
 
   .suchenfeld {
     
-    float: left; width: 450px;
+    float: left; width: 200;
     margin: 0; padding: 0;
-  
+    
   }
 
   .loginfeld {
-  	margin-left: 500px;
+  	margin-left: 465px;
   }
 
-  .popover-inner {
-    width: 500px important!;
+  .containernav {
+    margin-left: 300px;
+   
   }
