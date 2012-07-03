@@ -16,15 +16,20 @@
 					<% end %>
 				</div>
 				<div style=' margin-left:100px; margin-right: 100px;'>
-
-					<h2><%= eintrag.titel %></h2>
+					<!--<% if eintrag.kind_of? CodeSnippet %>
+						<h2 class='anzeige' rel='popover' data-content='<%= html_escape(codeAnfaerben(eintrag.code)) %>' data-original-title='A Title'>
+							<%= eintrag.titel %>
+						</h2>
+					<% else %>
+					 	<h2></h2>
+					<% end %>			-->			
+					<%= code_snippet_hover(eintrag) %>
 					<blockquote>	
-  					<p><%= eintrag.beschreibung %></p>
+					<p><%= eintrag.beschreibung %></p>
   					<small><%= eintrag.autor %></small>
 					</blockquote>
-				
+					
 				</div>
-				
 			</div>
 		</td>
 		</tr>
@@ -33,3 +38,4 @@
 <% end %>
 
 <p><%= will_paginate @eintraegepaginiert %></p>
+

@@ -33,3 +33,7 @@
   .loginfeld {
   	margin-left: 500px;
   }
+
+  .popover-inner {
+    width: 500px important!;
+  }

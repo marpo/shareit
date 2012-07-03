@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def codeAnfaerben(code_snippet)
-		CodeRay.scan(code_snippet, :ruby).div(:line_numbers => :table).html_safe
+		CodeRay.scan(code_snippet, :ruby).div(:line_numbers => :table)
 	end
 	def wer
 		User.find_by_id(session[:user_id]).name
