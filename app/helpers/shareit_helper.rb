@@ -10,7 +10,6 @@ module ShareitHelper
 
 	def code_snippet_hover obj
 		if obj.kind_of? CodeSnippet
-			p html_escape(codeAnfaerben(obj.code))
 			content_tag(:h2, obj.titel, :class => "anzeige", :'data-content' => codeAnfaerben(obj.code))
 			#rueckgabe = "<h2 class='anzeige' rel='popover' data-content='#{html_escape(codeAnfaerben(obj.code))}' data-original-title='A Title'>#{obj.titel}</h2>"
 		else
@@ -18,6 +17,14 @@ module ShareitHelper
 			content_tag(:h2, obj.titel)
 		end
 		#rueckgabe
+	end
+
+	def beschreibung obj
+		if obj.kind_of? CodeSnippet
+			content_tag(:h2, truncate(obj.beschreibung, 40, "..."))
+		else
+			link_to obj.url, obj.url, :target => :_blank
+		end
 	end
 
 	def snippetsUndLinksKombinieren
