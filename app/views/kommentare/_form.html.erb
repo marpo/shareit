@@ -1,6 +1,6 @@
 <%= form_for(@kommentar) do |f| %>
   <div class="field">
-    <%= f.text_area :derkommentar, rows: 6 %>
+    <%= f.text_area :derkommentar, rows: 4, :class => "kommentareingabe" %>
     <%= f.hidden_field :link_id, :value => @kommentar.link_id %>
   </div>
   <div class="actions">
