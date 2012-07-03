@@ -22,13 +22,7 @@ class SuchenController < ApplicationController
         eingabe.gsub!('tags:', '') 
         @links = Link.find_by_sql("SELECT * FROM links WHERE tags LIKE '%#{eingabe.strip}%'")
         @code_snippets = CodeSnippet.find_by_sql("SELECT * FROM code_snippets WHERE tags LIKE '%#{eingabe.strip}%'") 
-        eintrag = [@links, @code_snippets].flatten
-        eintrag.each do |e|
-          #@links = Link.where('tags LIKE ?', "%#{eingabe.strip}%")
-          e.tag_array.each do |tag|
-        		rueckgabe << e
-          end
-      end
+        rueckgabe = [@links, @code_snippets].flatten
     elsif eingabe.start_with?("beschreibung:")
         eingabe.gsub!('beschreibung:', '')
         @links = Link.find_by_sql("SELECT * FROM links WHERE beschreibung LIKE '%#{eingabe.strip}%'")

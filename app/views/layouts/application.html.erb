@@ -37,22 +37,15 @@
      <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
+              <li class="nav-header">Ansehen</li>
+              <li><%= link_to 'Anzeigen',  root_path %></li>
               <li class="nav-header">Teilen</li>
               <li><%= link_to 'Link',  new_link_path %></li>
               <li><%= link_to 'CodeSnippet', new_code_snippet_path %></li>
-              <li class="nav-header">Ansehen</li>
-              <li><%= link_to 'Anzeigen',  root_path %></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
               <% if session[:user_id] %>
               <li class="nav-header"><%= wer %></li>
               <li><%= link_to 'Meine Links', links_path %></li>
               <li><%= link_to 'Meine CodeSnippets', code_snippets_path %></li>
-              <li><%= link_to 'Meine Kommentare', kommentare_path %></li>
-              <li><a href="#">Link</a></li>
               <% end %>
             </ul>
           </div><!--/.well -->

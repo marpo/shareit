@@ -1,4 +1,6 @@
+require 'net/http'
 class LinksController < ApplicationController
+
   # GET /links
   # GET /links.json
   def index
@@ -44,7 +46,9 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(params[:link])
     @link.user = User.find(session[:user_id])
-
+    @link.titel = nil if @link.titel.blank?
+    @link.url = "http://#{@link.url}" unless (@link.url.start_with?('/http://') || @link.url.start_with?('/https://'))
+    @link.titel = @link.titel || titel_auslesen(@link.url)
     respond_to do |format|
       if @link.save
         format.html { redirect_to @link, notice: 'Link was successfully created.' }
@@ -82,5 +86,31 @@ class LinksController < ApplicationController
       format.html { redirect_to links_url }
       format.json { head :no_content }
     end
+  end
+
+  def titel_auslesen(url)
+    uri = URI(url)
+    rueckgabe = nil
+    regular = Regexp.new(/^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix)
+    if url.match(regular)
+      Net::HTTP.start(uri.host, uri.port) do |http|
+        unless uri.path.blank?
+      #  request = Net::HTTP::Get.new uri.request_url
+          pfad = uri.path
+        else
+          pfad = '/'
+        end
+        response = http.get(pfad)
+        rueckgabe = verarbeitung(response.body)
+      end
+    end
+    rueckgabe
+  end
+
+  def verarbeitung response
+    rueckgabe = response.slice!(/<title>.+?<\/title>/)
+    rueckgabe.sub!(/<title>/, '')
+    rueckgabe.sub!(/<\/title>/, '')
+    rueckgabe.strip
   end
 end
