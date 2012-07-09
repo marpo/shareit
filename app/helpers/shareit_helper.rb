@@ -8,6 +8,15 @@ module ShareitHelper
 		end
 	end
 
+	def linkPfad obj
+		begin
+			obj.code
+			code_snippet_url(obj)
+		rescue
+			link_url(obj)
+		end
+	end
+
 	def code_snippet_hover obj
 		if obj.kind_of? CodeSnippet
 			content_tag(:h2, obj.titel, :class => "anzeige", :'data-content' => codeAnfaerben(obj.code, obj.sprache))

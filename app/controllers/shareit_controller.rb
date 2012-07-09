@@ -29,11 +29,17 @@ class ShareitController < ApplicationController
   end
 
   def rss
+    
+    @links = Link.all
+    @code_snippets = CodeSnippet.all
+    @eintraege = [@links, @code_snippets].flatten
+     respond_to do |format|
+        format.atom { render :layout => false }
+
+        # we want the RSS feed to redirect permanently to the ATOM feed
+        format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+  end
+  end
  
-  @eintraege = snippetsUndLinksKombinieren
-  respond_to do |format|
-  	format.atom
-  end
-  end
 
 end

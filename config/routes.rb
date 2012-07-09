@@ -17,7 +17,10 @@ Shareit::Application.routes.draw do
   resources :users
 
   resources :links
-  
+
+      match '/rss' => 'shareit#rss',
+      :as => :feed,
+      :defaults => { :format => 'atom' }
  
 
   # The priority is based upon order of creation:

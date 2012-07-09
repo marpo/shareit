@@ -51,6 +51,7 @@
         </div><!--/span-->
       
     <div class="container main">
+      <%= auto_discovery_link_tag(:rss, {:action => "rss", :controller=>"shareit"}, {:title => "RSS Feed"}) %>
       <%= yield %>  
       <div class="dieBox">
           <!--<div class="well" style="min-height:300px;"> -->
