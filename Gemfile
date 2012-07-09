@@ -27,6 +27,8 @@ gem 'bcrypt-ruby'
 
 gem 'coderay'
 
+gem 'will_paginate-bootstrap'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

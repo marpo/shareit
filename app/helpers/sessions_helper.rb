@@ -12,7 +12,7 @@ module SessionsHelper
 		if dername == "Login"
 			link_to "Login", login_path, :method => :get, :class => 'btn btn-mini btn-primary'
 		else
-			link_to dername, logout_path, :method => :delete, :class => 'btn btn-mini btn-primary'
+			link_to "Logout: #{dername}", logout_path, :method => :delete, :class => 'btn btn-mini btn-primary'
 		end
 	end
 end

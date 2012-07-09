@@ -26,17 +26,20 @@
   }
 
   .suchenfeld {
-    
     float: left; width: 200;
     margin: 0; padding: 0;
     
   }
 
   .loginfeld {
-  	margin-left: 465px;
+  	margin-left: 482px;
   }
 
   .containernav {
     margin-left: 300px;
    
+  }
+
+    .popover-inner {
+    width: 500px important!;
   }

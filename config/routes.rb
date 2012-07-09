@@ -12,6 +12,7 @@ Shareit::Application.routes.draw do
   end
   post 'suchen' => 'suchen#create'
   get 'admin' => 'admin#index'
+  get 'suchen' => 'suchen#create'
 
   resources :users
 

@@ -8,8 +8,8 @@ class ShareitController < ApplicationController
   	@links = Link.all
   	@code_snippets = CodeSnippet.all
   	@eintraege = [@links, @code_snippets].flatten
-  	@eintraegepaginiert = @eintraege.paginate :page=>params[:page], :order=>'created_at desc', :per_page => 4
-  	# @eintraege.sort! { |a, b| b.created_at <=> a.created_at  }
+    @eintraege.sort! { |a, b| b.created_at <=> a.created_at  }
+  	@eintraegepaginiert = @eintraege.paginate(:page=>params[:page], :order=>'created_at DESC', :per_page => 4)
 
   	respond_to do |format|
       format.html # index.html.erb

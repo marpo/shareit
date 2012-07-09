@@ -16,7 +16,7 @@
 					</td>
 					<td>
 						<% eintrag.tag_array.each do |tag| %>
-						<%= label_tag tag, nil, :class => 'btn' %>
+						<%= link_to tag, suchen_path(:sucheeingabe=> "tags: #{tag.strip}"), :class => 'btn' %>
 						<% end %>
 					</td>
 			</tr>
@@ -25,5 +25,5 @@
 
 </table>
 
-<p><%= will_paginate @eintraegepaginiert %></p>
+<p><%= will_paginate @eintraegepaginiert, :renderer => BootstrapPagination::Rails %></p>
 

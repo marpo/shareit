@@ -1,7 +1,7 @@
-.digg_pagination {
+/*.digg_pagination {
   background: white;
   cursor: default;
-  /* self-clearing method: */ }
+   self-clearing method: }
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
     padding: 0.2em 0.5em;
     display: block;
@@ -102,3 +102,4 @@
     margin-right: 1em; }
   .flickr_pagination .next_page {
     margin-left: 1em; }
+    */
